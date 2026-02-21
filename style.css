@@ -1,0 +1,97 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #ffd6e8, #fff1c1);
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/* Flower Border */
+.flower-border {
+    border: 15px solid pink;
+    padding: 10px;
+    min-height: 100vh;
+}
+
+/* Center Content */
+.content {
+    max-width: 400px;
+    margin: auto;
+    text-align: center;
+    padding: 20px;
+}
+
+/* Video */
+video {
+    width: 100%;
+    border-radius: 15px;
+    border: 4px solid #ff8fab;
+}
+
+/* Question */
+h2 {
+    margin: 15px 0;
+    color: #c9184a;
+}
+
+/* Buttons */
+.buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+button {
+    padding: 12px 25px;
+    font-size: 18px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+}
+
+#yesBtn {
+    background: #ff4d6d;
+    color: white;
+}
+
+#noBtn {
+    background: #adb5bd;
+}
+
+/* Note */
+#note {
+    margin-top: 20px;
+    padding: 15px;
+    background: white;
+    border-radius: 15px;
+    color: #d6336c;
+    font-size: 20px;
+    font-family: 'Dancing Script', cursive;
+}
+
+.hidden {
+    display: none;
+}
+
+/* Falling Petals */
+.petal {
+    position: fixed;
+    top: -50px;
+    width: 30px;
+    animation: fall linear infinite;
+    pointer-events: none;
+}
+
+@keyframes fall {
+    from {
+        transform: translateY(0) rotate(0deg);
+    }
+    to {
+        transform: translateY(110vh) rotate(360deg);
+    }
+}
