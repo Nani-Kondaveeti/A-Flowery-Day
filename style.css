@@ -85,6 +85,7 @@ button {
     width: 30px;
     animation: fall linear infinite;
     pointer-events: none;
+    transition: transform 0.3s ease;
 }
 
 @keyframes fall {
