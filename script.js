@@ -60,3 +60,44 @@ function startMusic() {
 
 document.addEventListener("click", startMusic);
 document.addEventListener("touchstart", startMusic);
+
+// 🌸 Cursor / Touch Interaction
+
+function repelPetals(x, y) {
+    const petals = document.querySelectorAll(".petal");
+
+    petals.forEach(petal => {
+        const rect = petal.getBoundingClientRect();
+        const petalX = rect.left + rect.width / 2;
+        const petalY = rect.top + rect.height / 2;
+
+        const dx = petalX - x;
+        const dy = petalY - y;
+        const distance = Math.sqrt(dx * dx + dy * dy);
+
+        const maxDistance = 120;
+
+        if (distance < maxDistance) {
+            const angle = Math.atan2(dy, dx);
+            const pushDistance = (maxDistance - distance) * 0.8;
+
+            petal.style.transform = `
+                translate(${Math.cos(angle) * pushDistance}px,
+                ${Math.sin(angle) * pushDistance}px)
+            `;
+        } else {
+            petal.style.transform = "translate(0, 0)";
+        }
+    });
+}
+
+// Mouse move
+document.addEventListener("mousemove", (e) => {
+    repelPetals(e.clientX, e.clientY);
+});
+
+// Touch move (mobile)
+document.addEventListener("touchmove", (e) => {
+    const touch = e.touches[0];
+    repelPetals(touch.clientX, touch.clientY);
+});
