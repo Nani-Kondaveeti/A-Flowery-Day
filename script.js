@@ -33,7 +33,7 @@ function startPetals() {
         for (let i = 0; i < 10; i++) {
             const petal = document.createElement("img");
             petal.src = "assets/petal.png";
-            petal.className = "petal";
+            petal.className = "petal floating";
 
             petal.style.left = Math.random() * window.innerWidth + "px";
             petal.style.animationDuration = 4 + Math.random() * 4 + "s";
